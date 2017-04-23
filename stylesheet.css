@@ -1,0 +1,71 @@
+     :root {
+      /* TIP: use same color to disable gradient */
+      --slider-fill-color1: rgba(247, 4, 32, 0.87);
+      --slider-fill-color2: rgb(0, 9, 242);
+      --slider-background: rgba(255, 255, 255, 0.3);
+      --thumb-size: 8px;
+      --thumb-color: rgba(0, 36, 157, 0.88);
+      --bar-height: 1px;
+      /* add more clickable area to trigger
+         INFO: use 'none' to disable  */
+      --slider-border: 10px solid transparent;
+    }
+    /*********** Generic styles ***********/
+    
+    input[type='range']::-webkit-slider-runnable-track,
+    input[type='range']::-webkit-slider-thumb,
+    input[type='range'] {
+      -webkit-appearance: none;
+    }
+    
+    input[type='range'] {
+      width: 100%;
+      background-clip: content-box;
+      margin: 0;
+    }
+    
+    input[type='range']:focus {
+      outline: none;
+    }
+    
+    .vertical-range {
+      transform: rotate(-90deg);
+      transform-origin: 100% 0%;
+    }
+    /* END Generic styles */
+    
+    input[type='range'] {
+      background-color: var(--slider-background);
+      border-top: var(--slider-border);
+      border-bottom: var(--slider-border);
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: var(--bar-height);
+      border-radius: 0;
+      background: linear-gradient(90deg, var(--slider-fill-color1), var(--slider-fill-color2)) 0 100% no-repeat content-box;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+      /* round button */
+      border-radius: 50%;
+      transform: translateY( calc( var(--bar-height) - var(--thumb-size) / 2));
+      background-color: var(--thumb-color);
+      border: none;
+    }
+    
+    
+    /* hover style */
+    input[type='range']:hover {
+      filter: brightness(150%);
+    }
+    
+    input[type='range']::-webkit-slider-thumb:hover {
+      
+    }
+    
+    input[type='range']::-webkit-slider-thumb:active {
+
+    }
