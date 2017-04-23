@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #494545;
+      padding: 15px;
+    }
+    
+    h3 {
+      font-family: sans-serif;
+      font-weight: lighter;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+     :root {
+      /* TIP: use same color to disable gradient */
+      --slider-fill-color1: rgba(247, 4, 32, 0.87);
+      --slider-fill-color2: rgb(0, 9, 242);
+      --slider-background: rgba(255, 255, 255, 0.3);
+      --thumb-size: 8px;
+      --thumb-color: rgba(0, 36, 157, 0.88);
+      --bar-height: 1px;
+      /* add more clickable area to trigger
+         INFO: use 'none' to disable  */
+      --slider-border: 10px solid transparent;
+    }
+    /*********** Generic styles ***********/
+    
+    input[type='range']::-webkit-slider-runnable-track,
+    input[type='range']::-webkit-slider-thumb,
+    input[type='range'] {
+      -webkit-appearance: none;
+    }
+    
+    input[type='range'] {
+      width: 100%;
+      background-clip: content-box;
+      margin: 0;
+    }
+    
+    input[type='range']:focus {
+      outline: none;
+    }
+    
+    .vertical-range {
+      transform: rotate(-90deg);
+      transform-origin: 100% 0%;
+    }
+    /* END Generic styles */
+    
+    input[type='range'] {
+      background-color: var(--slider-background);
+      border-top: var(--slider-border);
+      border-bottom: var(--slider-border);
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: var(--bar-height);
+      border-radius: 0;
+      background: linear-gradient(90deg, var(--slider-fill-color1), var(--slider-fill-color2)) 0 100% no-repeat content-box;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+      /* round button */
+      border-radius: 50%;
+      transform: translateY( calc( var(--bar-height) - var(--thumb-size) / 2));
+      background-color: var(--thumb-color);
+      border: none;
+    }
+    
+    
+    /* hover style */
+    input[type='range']:hover {
+      filter: brightness(150%);
+    }
+    
+    input[type='range']::-webkit-slider-thumb:hover {
+      
+    }
+    
+    input[type='range']::-webkit-slider-thumb:active {
+
+    }
+    
+    
+    /********************* CUSTOM styles ********************/
+    #range2::-webkit-slider-runnable-track {
+      background: linear-gradient(90deg, #fff, #fff) 0 100% no-repeat content-box;
+    }
+    
+    #range2::-webkit-slider-thumb {
+      background-color: #fff;
+    }
+    
+    #range3::-webkit-slider-runnable-track {
+      background: linear-gradient(90deg, #fff, #fff) 0 100% no-repeat content-box;
+    }
+    
+    #range3::-webkit-slider-thumb {
+      opacity: 0;
+    }
+    
+    #range4 {
+      width: 150px;
+      left: -150px;
+      position: relative;
+    }
+    
+    #range5 {
+      width: 150px;
+      left: -250px;
+      position: relative;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+  <h3>Gradient</h3>
+  <div>
+    <input type="range" min="0" max="10" value="10" id="range1">
+  </div>
+  <h3>Solid color</h3>
+  <div>
+    <input type="range" min="-10" max="10" value="0" id="range2" step="2">
+  </div>
+  <h3>No thumb</h3>
+  <div>
+    <input type="range" min="0" max="10" value="8" id="range3">
+  </div>
+
+  <h3>Vertical</h3>
+  <div style="height: 150px">
+    <input type="range" min="0" max="10" value="8" id="range4" class="vertical-range">
+    <input type="range" min="0" max="10" value="2" id="range5" class="vertical-range">
+  </div>
+
+
+
+
+
+
+  <script>
+    //
+    // Style multiple input ranges
+    // WARNING: each input range need to have an unique ID
+    //
+
+    "use strict";
+    const DEBUG = true;
+
+    var inlineStyle = document.createElement('style');
+    var rangeSelector = document.querySelectorAll('[type=range]');
+    var inlineStyleContent = new Array;
+
+    document.body.appendChild(inlineStyle);
+
+    var eventname = new Event('input')
+
+    for (let item of rangeSelector) {
+      item.addEventListener('input', function() {
+        let rangeInterval = Number(this.getAttribute('max') - this.getAttribute('min'));
+        let rangePercent = (Number(this.value) + Math.abs(this.getAttribute('min'))) / rangeInterval * 100;
+
+        DEBUG ? console.log("#" + this.id + ": " + rangePercent + "%") : ''; // for debug
+
+        writeStyle({
+          id: this.id,
+          percent: rangePercent
+        });
+      }, false);
+
+      item.dispatchEvent(eventname); // update bars at startup
+    }
+
+
+    /**
+     * Write Style element
+     * 
+     * @param {object} obj id: HTML id, percent: value
+     */
+    function writeStyle(obj) {
+      var find = inlineStyleContent.map(x => x.id).indexOf(obj.id);
+      var styleText = "";
+
+      if (find === -1) {
+        inlineStyleContent.push(obj)
+      } else {
+        inlineStyleContent[find] = obj;
+      }
+
+      for (let item of inlineStyleContent) {
+        styleText += '#' + item.id + '::-webkit-slider-runnable-track{background-size:' + item.percent + '% 100%} ';
+      }
+
+      inlineStyle.textContent = styleText;
+    }
+  </script>
+
+</body>
+
+</html>
