@@ -20,9 +20,9 @@ As Electron apps use Chrome (WebKit) as the render engine, I didn't add any comp
 ## Usage
 1. Download the script file
 2. Include the CSS stylesheet on your page
-3. Add the input range controls on your web page. **Each control need an unique ID:**
+3. Add the input range controls on your web page. **Each control needs an unique ID:**
   ``` <input type="range" min="0" max="10" value="10" id="your-custom-id"> ```
-4. Custom the stylesheet vars
+4. Customize the stylesheet vars
 
 
 ## History
