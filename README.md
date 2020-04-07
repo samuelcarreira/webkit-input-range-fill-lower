@@ -27,6 +27,7 @@ As Electron apps use Chrome (WebKit) as the render engine, I didn't add any comp
 
 ## History
 2017-04-23 - First public version
+2019-04-07 - Version 2.0
 
 ## Credits
 - Developed by: Samuel Carreira
