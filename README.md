@@ -6,6 +6,7 @@ Customize the native input range controls like the ```::-ms-fill-lower``` proper
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
+![Screenshot](samples.png)
 
 ## New Version 3.x Notice
 Because of the increasing interest in this "library", I decided to completely rewrite it.
@@ -21,6 +22,7 @@ Because of the increasing interest in this "library", I decided to completely re
 * **Written in TypeScript** *new version*
 * **Pure / vanilla JavaScript (no jQuery)**
 
+View the sample page: https://samuelcarreira.github.io/webkit-input-range-fill-lower (not working...)
 
 ## Quick Usage
 You only need to follow 4 simple steps to start using this module:
