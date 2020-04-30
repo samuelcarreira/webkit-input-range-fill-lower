@@ -1,6 +1,4 @@
-# webkit-input-range-fill-lower
-
-#### WebKit Input Range Fill Lower Hack
+# WebKit Input Range Fill Lower Hack
 
 Customize the native input range controls like the ```::-ms-fill-lower``` property on WebKit browsers
 
