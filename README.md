@@ -21,14 +21,14 @@ Because of the increasing interest in this "library", I decided to completely re
 * **Customizable styles (solid color or gradient)** *new version*
 * **Written in TypeScript** *new version*
 * **Pure / vanilla JavaScript (no jQuery)**
-* **Lightweight (3.6kB minified)**
+* **Lightweight** *(3.6kB minified)*
 
 View the sample page: https://samuelcarreira.github.io/webkit-input-range-fill-lower (not working...)
 
 ## Quick Usage
 You only need to follow 4 simple steps to start using this module:
 
-1. Download the script file from the **dist** folder (minified file: `webkit-input-range-fill-lower.min.js`)
+1. Download the script file from the [dist](dist) folder (minified file: `webkit-input-range-fill-lower.min.js`)
 2. Add the input range controls on your web page. **Each control needs an unique ID and the max value**
   ```
   // valid
