@@ -1,0 +1,36 @@
+{
+  "name": "webkit-input-range-fill-lower",
+  "productName": "WebKit Input Range Fill Lower Hack",
+  "version": "3.0.0",
+  "description": "Customize the native input range controls like the ```::-ms-fill-lower``` property on webkit browsers (like Chrome)",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "terser": "^4.6.12",
+    "typescript": "^3.8.3",
+    "xo": "^0.30.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "xo",
+    "build": "tsc",
+    "dist": "terser ./dist/webkit-input-range-fill-lower.js --output ./dist/webkit-input-range-fill-lower.min.js",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelcarreira/webkit-input-range-fill-lower.git"
+  },
+  "keywords": [
+    "range"
+  ],
+  "author": "Samuel Carreira <samuelcarreira@outlook.com> (http://www.samuelcarreira.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelcarreira/webkit-input-range-fill-lower/issues"
+  },
+  "homepage": "https://github.com/samuelcarreira/webkit-input-range-fill-lower#readme",
+  "files": [
+    "dist/**/*"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "xo-typescript",
+  "extensions": [
+    "ts"
+  ],
+  "ignores": [],
+  "space": true,
+  "envs": ["browser", "es6"],
+  "rules": {
+    "no-dynamic-delete": 0,
+    "expiring-todo-comments": 0,
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-dynamic-delete": "off",
+    "capitalized-comments": 1,
+    "unicorn/prefer-query-selector": 0
+  }
+}

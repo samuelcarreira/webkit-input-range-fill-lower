@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "amd",
+    "target": "es6",
+    "allowJs": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "outFile": "./dist/webkit-input-range-fill-lower.js"
+  },
+  "include": [
+    "src/index.ts"
+  ]
+}

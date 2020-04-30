@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebKit Input Range Fill Lower Hack Samples</title>
+
+  <meta name="author" content="Samuel Carreira">
+  <meta name="dcterms.dateCopyrighted" content="2020">
+
+  <script src="dist/webkit-input-range-fill-lower.js"></script>
+
+  <style>
+    /* default styles */
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    body {
+      background-color: #494545;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .showdown {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    #range1::-webkit-slider-runnable-track {
+      height: 2px;
+    }
+
+    #range-vertical::-webkit-slider-runnable-track {
+      height: 2px;
+    }
+
+    #range1::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      /* round button */
+      border-radius: 50%;
+      transform: translateY(-6px);
+      background-color: white;
+      border: none;
+    }
+
+    #range-vertical::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      /* round button */
+      border-radius: 50%;
+      transform: translateY(-7px);
+      background-color: white;
+      border: none;
+    }
+
+    #range-gradient::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      /* round button */
+      border-radius: 50%;
+      transform: translateY(-7px);
+      background-color: rgba(0, 36, 157, 0.88);
+      border: none;
+    }
+
+    #range-gradient2::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      /* round button */
+      border-radius: 50%;
+      transform: translateY(-3px);
+      background-color: #2e86ab;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    #range-gradient::-webkit-slider-runnable-track {
+      height: 2px;
+    }
+
+    #range-gradient2::-webkit-slider-runnable-track {
+      height: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    #range2::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      transform: translateY(-3px);
+      opacity: 0;
+    }
+
+    #range2::-webkit-slider-runnable-track {
+      height: 10px;
+    }
+
+    #range2:hover {
+      filter: brightness(150%);
+    }
+
+    #range1, #range-vertical, #range2, #range-gradient, #range-gradient2 {
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-appearance: none;
+    }
+
+    #range-gradient2 {
+      border-radius: 5px;
+    }
+
+    .vertical-range {
+      transform: rotate(-90deg);
+      /* transform-origin: 100% 0%; */
+    }
+
+    input[type='range'] {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>WebKit Input Range Fill Lower Hack Samples</h1>
+
+  <section class="showdown" style="margin-bottom: 16px;">
+    <div>
+      <h5>Complex Gradient</h5>
+      <input id="range-gradient2" type="range" min="0" max="10" value="9">
+    </div>
+
+    <div>
+      <h5>Gradient</h5>
+      <input id="range-gradient" type="range" min="0" max="10" value="9">
+    </div>
+
+    <div>
+      <h5>Solid color</h5>
+      <input id="range1" type="range" min="0" max="10" value="5">
+    </div>
+
+    <div>
+      <h5>No thumb</h5>
+      <input id="range2" type="range" min="0" max="10" value="6">
+    </div>
+
+    <div>
+      <h5>Without custom styles</h5>
+      <input id="range3" type="range" min="0" max="10" value="3">
+    </div>
+    
+  </section>
+
+  <section class="showdown">
+    <div>
+      <h5>Vertical</h5>
+      <input id="range-vertical" type="range" min="0" max="10" value="3" class="vertical-range">
+    </div>
+
+    <div>
+      <h5>Default browser range for comparison</h5>
+      <input type="range" min="0" max="10" value="5">
+    </div>
+  </section>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new WebkitInputRangeFillLower({
+        selectors: ['range1', 'range2', 'range3', 'range-vertical'],
+        color: '#007afb'
+      });
+
+      new WebkitInputRangeFillLower({
+        selectors: 'range-gradient',
+        gradient: 'rgba(247, 4, 32, 0.87), rgb(0, 9, 242)'
+      });
+
+      new WebkitInputRangeFillLower({
+        selectors: 'range-gradient2',
+        degree: 165,
+        gradient: '#c73e1d 0%, #a23b72 12%, #2e86ab 100%'
+      });
+
+
+
+      // const _test = new WebkitInputRangeFillLower({selectors: ['range1', 'range2', 'check1']});
+
+      // console.log(_test.getElementsList);
+    });
+  </script>
+
+
+</body>
+
+</html>
