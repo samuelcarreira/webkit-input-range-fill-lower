@@ -45,7 +45,7 @@ You only need to follow 4 simple steps to start using this module:
     const myRanges = new WebkitInputRangeFillLower({selectors: ['your-custom-id', 'your-custom-id2'], angle: 90, gradient: 'rgba(238,174,202,1) 0%, rgba(198,180,216,1) 74%, rgba(148,187,233,1) 100%'});
   });
   ```
-4. (Optional) You can customize the input element on the page stylesheet
+4. (Optional) You can customize the input element on the page stylesheet. View the [index.html](index.html) source code to learn more
 
 ### WebkitInputRangeFillLower(options)
 
