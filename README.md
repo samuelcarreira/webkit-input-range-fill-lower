@@ -21,6 +21,7 @@ Because of the increasing interest in this "library", I decided to completely re
 * **Customizable styles (solid color or gradient)** *new version*
 * **Written in TypeScript** *new version*
 * **Pure / vanilla JavaScript (no jQuery)**
+* **Lightweight (3.6kB minified)**
 
 View the sample page: https://samuelcarreira.github.io/webkit-input-range-fill-lower (not working...)
 
@@ -60,6 +61,8 @@ Property         | Type     | Required    | Description
 ## Compatibility
 As the name indicates, this "library" was written to be compatible with the WebKit engine browsers (Google Chrome, Opera, New Microsoft Edge, etc.).
 On Mozilla Firefox you cannot expect the same results even with the `-moz-range-progress` added (read more [here](https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress) )
+
+![compatibility](compatibility.png)
 
 
 ## Motivation and history
