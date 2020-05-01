@@ -19,15 +19,15 @@ Because of the increasing interest in this "library", I decided to completely re
 * **Customizable styles (solid color or gradient)** *new version*
 * **Written in TypeScript** *new version*
 * **Pure / vanilla JavaScript (no jQuery)**
-* **Lightweight** *(3.6kB minified)*
+* **Lightweight** *(3.6kB minified ~1.3kB gzipped)*
 
-View the sample page: https://samuelcarreira.github.io/webkit-input-range-fill-lower (not working...)
+View the sample page: https://samuelcarreira.github.io/webkit-input-range-fill-lower
 
 ## Quick Usage
 You only need to follow 4 simple steps to start using this module:
 
-1. Download the script file from the [dist](dist) folder (minified file: `webkit-input-range-fill-lower.min.js`)
-2. Add the input range controls on your web page. **Each control needs an unique ID and the max value**
+1. Download the script file from the [dist](dist) folder or [releases](https://github.com/samuelcarreira/webkit-input-range-fill-lower/releases) (minified file: `webkit-input-range-fill-lower.min.js`)
+2. Add the input range controls on your web page. **Each control needs a unique ID and the max value**
   ```
   // valid
   <input type="range" min="0" max="10" value="10" id="your-custom-id">
@@ -44,7 +44,7 @@ You only need to follow 4 simple steps to start using this module:
     const myRanges = new WebkitInputRangeFillLower({selectors: ['your-custom-id', 'your-custom-id2'], angle: 90, gradient: 'rgba(238,174,202,1) 0%, rgba(198,180,216,1) 74%, rgba(148,187,233,1) 100%'});
   });
   ```
-4. (Optional) You can customize the input element on the page stylesheet. View the [index.html](index.html) source code to learn more
+4. (Optional) You can customize the input element on the page stylesheet. View the `index.html` or the [sample page](https://samuelcarreira.github.io/webkit-input-range-fill-lower) source code to learn more
 
 ### WebkitInputRangeFillLower(options)
 
@@ -79,6 +79,3 @@ Because you can "set the size" of the background (when you use a linear gradient
 ## License
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - Copyright 2020 © <a href="http://samuelcarreira.com" target="_blank">Samuel Carreira</a>.
-
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress
